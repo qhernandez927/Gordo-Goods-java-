@@ -25,9 +25,13 @@ public class RestWebController {
     }
 
     @CrossOrigin
-    @GetMapping("/getAllItems")
-    public List<StickerProduct> getItems() {
-        return null;
+    @GetMapping("/getStickerProducts")
+    public ResponseEntity<List<StickerProduct>> getStickerProduct() {
+
+        return ResponseEntity
+                .ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(_mockRepisitory.getStickerProducts());
     }
 
     @GetMapping(value = "/getStickerProduct/{id}")
@@ -43,19 +47,20 @@ public class RestWebController {
     }
 
     @GetMapping(value = "/getImage/{id}")
-    public ResponseEntity<byte[]> getImage(@PathVariable int id) throws IOException {
+    public ResponseEntity<InputStreamResource> getImage(@PathVariable int id) throws IOException {
 
-    byte[] temp = _mockRepisitory.getPicture(id);
+        StickerProduct product = _mockRepisitory.getStickerProduct(id);
+
+        var imgFile = new ClassPathResource(product.getImgPath());
+
         return ResponseEntity
                 .ok()
                 .contentType(MediaType.IMAGE_PNG)
-                .body(_mockRepisitory.getPicture(id));
+                .body(new InputStreamResource(imgFile.getInputStream()));
     }
 
-    @GetMapping(value = "/getImages")
-    public ResponseEntity checkImage() throws IOException {
-
-
+    @GetMapping(value = "/test")
+    public ResponseEntity testRequest() {
 
         return ResponseEntity
                 .ok()

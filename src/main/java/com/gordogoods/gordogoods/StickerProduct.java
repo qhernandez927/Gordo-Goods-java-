@@ -4,6 +4,7 @@ import org.springframework.core.io.InputStreamResource;
 
 public class StickerProduct {
 
+    private String imgPath;
     private int id;
     private String description;
     private double price;
@@ -19,6 +20,14 @@ public class StickerProduct {
         this.id = id;
         this.description = description;
         this.price = price;
+
+    }
+
+    public StickerProduct(int id, String description, double price, String imgPath) {
+        this.id = id;
+        this.description = description;
+        this.price = price;
+        this.imgPath = imgPath;
 
     }
 
@@ -52,6 +61,14 @@ public class StickerProduct {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
 }
