@@ -19,9 +19,17 @@ public class ProductRepository {
 
     private void CreateMockData() {
       _mockProducts = new ArrayList<StickerProduct>();
-      _mockProducts.add( new StickerProduct(01, "A Sticker", 5.99,"/image/almost.png"));
-      _mockProducts.add( new StickerProduct(02, "Another Sticker", 6.99,"Need Path"));
-      _mockProducts.add( new StickerProduct(03, "Final Sticker", 7.99,"Need Path"));
+      _mockProducts.add( new StickerProduct(1, "Eye On The Pies Sticker", 5.99,"./assets/gordo-stickers/eye-on-the-pies.png"));
+      _mockProducts.add( new StickerProduct(2, "Animal Gun Sticker", 6.99,"./assets/gordo-stickers/animal-gun.png"));
+      _mockProducts.add( new StickerProduct(3, "Batty Boy Sticker", 7.99,"./assets/gordo-stickers/Batty_Boy.png"));
+      _mockProducts.add( new StickerProduct(4, "Buggin' Out Sticker", 5.99,"./assets/gordo-stickers/buggin-out.png"));
+      _mockProducts.add( new StickerProduct(5, "Elephant Sticker", 6.99,"./assets/gordo-stickers/elephant.png"));
+      _mockProducts.add( new StickerProduct(6, "Pajaro Sticker", 7.99,"./assets/gordo-stickers/pajaro.png"));
+      _mockProducts.add( new StickerProduct(7, "Robot Fish Tank Sticker", 6.99,"./assets/gordo-stickers/robot-fish-tank.png"));
+      _mockProducts.add( new StickerProduct(8, "Robot Jesus Sticker", 7.99,"./assets/gordo-stickers/robot-jesus.png"));
+      _mockProducts.add( new StickerProduct(9, "Same Future Sticker", 5.99,"./assets/gordo-stickers/same-future.png"));
+      _mockProducts.add( new StickerProduct(10, "Yuck Burger Sticker", 6.99,"./assets/gordo-stickers/youck-burger.png"));
+      _mockProducts.add( new StickerProduct(11, "Feed Us Records Sticker", 7.99,"./assets/gordo-stickers/feed-us-records.png"));
     }
 
     public List<StickerProduct> getStickerProducts(){
